@@ -21,6 +21,19 @@
 source ~/dotfiles/zsh/plugins/fixls.zsh
 
 #Functions
+	# `mktouch foo/bar/baz.txt` -> `mkdir -p foo/bar/ && touch baz.txt`
+	function mktouch() {
+	    if [ $# -lt 1 ]; then
+		echo "Missing argument";
+		return 1;
+	    fi
+
+	    for f in "$@"; do
+		mkdir -p -- "$(dirname -- "$f")"
+		touch -- "$f"
+	    done
+	}
+
 	# Loop a command and show the output in vim
 	loop() {
 		echo ":cq to quit\n" > /tmp/log/output 

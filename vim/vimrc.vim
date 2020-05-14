@@ -31,13 +31,35 @@ Plug 'PProvost/vim-ps1',   { 'for': 'ps1' }
 Plug 'chrisbra/csv.vim',   { 'for': 'csv' }
 Plug 'etdev/vim-hexcolor', { 'for': 'css' }
 Plug 'kurocode25/mdforvim', { 'for': 'markdown' }
-Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
+
+" Bundle of plugins (includes vim-javascript)
+Plug 'sheerun/vim-polyglot'
+
+" Linting
+Plug 'scrooloose/syntastic'
+
+" Javascript ---
+" Yet Another Javascript Syntax
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+
+" Interesting syntax highlighting, uses node.js to run JS parser. Toggleable
+" Plug 'bigfish/vim-js-context-coloring'
+
+" TODO: Get description of what this plugin does
+" Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
+
+" JSX support for React
+Plug 'mxw/vim-jsx'
+" JSON
+Plug 'elzr/vim-json'
+"
 
 " Color Themes
 Plug 'altercation/vim-colors-solarized' 
 Plug 'Heorhiy/VisualStudioDark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'dsolstad/vim-wombat256i'
+Plug 'nightsense/seagrey'
 
 " Show open buffers
 Plug 'bling/vim-bufferline' 
@@ -68,7 +90,7 @@ set smartcase
 set incsearch
 set splitright
 set splitbelow
-set cursorline 
+" set cursorline 
 set fillchars=vert:│,fold:─
 set wildmode=longest,list,full
 set wildmenu
@@ -86,6 +108,13 @@ set noexpandtab
 "highlight ColorColumn ctermbg=DarkCyan
 "let g:indent_guides_enable_on_vim_startup = 1
 
+" Color Scheme
+"colorscheme darkblue
+"colorscheme solarized
+"colorscheme seagrey-dark
+"colorscheme VisualStudioDark
+
+
 " Folding
 if @% =~# 'vimrc' || @% =~# 'gvimrc'
 	set foldmethod=marker
@@ -99,16 +128,19 @@ endif
 set foldnestmax=10
 set nofoldenable
 
-" Cursor Block for cygwin
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
-cabbrev ~? ~/
-cabbrev 5s %s
 "}}}
 " Mapings: {{{
 let mapleader = ","
+
+" Change cursor shape between insert and normal mode in iTerm2
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+" if $TERM_PROGRAM =~ "iTerm"
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7" "Vertical bar in insert mode-
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7" "Block in normal mode
+endif
 
 " NERDTree
 map <leader>nt :NERDTree<CR>
@@ -143,6 +175,8 @@ map <leader>nt :NERDTree<CR>
 " ===VimWiki===
 let wiki = {}
 let wiki.path = '~/Google Drive/personalWiki'
+let wiki.syntax = 'markdown'
+let wiki.ext = '.md'
 let wiki.nested_syntaxes = {'cs': 'cs'}
 let g:vimwiki_list = [wiki]
 
@@ -242,4 +276,4 @@ let g:dbext_default_profile_local = 'type=SQLSRV:user=vim:passwd=qjkCTW4!:host=l
 :map <leader>gl :vsc File.GetLatestSolutionFiles<CR>
 :map <leader>kto :vsc Window.KeepTabOpen<CR>
 :map <leader>se :vsc View.SolutionExplorer<CR>
-" }}}
+ }}}

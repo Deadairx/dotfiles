@@ -10,8 +10,28 @@
 	alias la="ls -A"
 	alias x="clear"
 	alias v="vim -p"
+	alias tmux="TERM=screen-256color-bce tmux"
 	mkdir -p /tmp/log
-	
+
+	## fasd 
+	alias a='fasd -a'        # any
+	alias s='fasd -si'       # show / search / select
+	alias d='fasd -d'        # directory
+	alias f='fasd -f'        # file
+	alias sd='fasd -sid'     # interactive directory selection
+	alias sf='fasd -sif'     # interactive file selection
+	alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+	alias zz='fasd_cd -d -i' # cd with interactive selection
+
+	## git shorthand
+	alias ga='git add .'	 # add all
+	alias gc='get commit'	 # commit with commitizen
+	alias gs='git status'	 
+
+	## docker shorthand
+	alias dcu='docker-compose up'	# docker-compose up
+	alias dcd='docker-compose down'	# docker-compose down
+
 	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
 	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
 
@@ -99,4 +119,10 @@ fi
 
 source ~/dotfiles/zsh/prompt.sh
 # export PATH=$PATH:$HOME/dotfiles/utils
+# homebrew packages
 export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/dotfiles/utils
+export JAVA_HOME=$HOME/Java/jdk-11.0.2.jdk/Contents/Home
+
+path=("/usr/local/sbin" $path)
+path=("${HOME}/bin" $path)
+typeset -aU path

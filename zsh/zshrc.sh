@@ -25,7 +25,7 @@
 
 	## git shorthand
 	alias ga='git add .'	 # add all
-	alias gc='get commit'	 # commit with commitizen
+	alias gc='git commit'	 # commit with commitizen
 	alias gs='git status'	 
 
 	## docker shorthand

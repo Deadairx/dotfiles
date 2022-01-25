@@ -83,25 +83,24 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 # Edit the array below, or relocate it to ~/.zshrc before anything is sourced
 # For help create an issue at github.com/parth/dotfiles
 
-autoload -U compinit
-
 plugins=(
 	docker
+  zsh-autosuggestions
+  zsh-completions
+  zsh-syntax-highlighting
 )
 
-for plugin ($plugins); do
-    fpath=(~/dotfiles/zsh/plugins/oh-my-zsh/plugins/$plugin $fpath)
-done
+#for plugin ($plugins); do
+#    fpath=(~/dotfiles/zsh/plugins/oh-my-zsh/plugins/$plugin $fpath)
+#done
 
-compinit
+autoload -U compinit && compinit
 
-source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
-source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
-source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh
-source ~/dotfiles/zsh/plugins/vi-mode.plugin.zsh
-source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/dotfiles/zsh/keybindings.sh
+#source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
+#source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
+#source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh
+#source ~/dotfiles/zsh/plugins/vi-mode.plugin.zsh
+#source ~/dotfiles/zsh/keybindings.sh
 
 # Fix for arrow-key searching
 # start typing + [Up-Arrow] - fuzzy find history forward

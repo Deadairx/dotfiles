@@ -8,6 +8,7 @@
              :km "osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"%s\"'"}
  :simlayers {:o-mode {:key :o}
              :app-mode {:key :a}
+             :vim-like-moves {:key :comma}
              :window-mode {:key :x}
              :workflowy-mode {:key :slash}
              :z-mode {:key :z}}
@@ -15,6 +16,10 @@
  :main[{:des "okey (alfred)"
         :rules [:o-mode
                 [:h [:alfred "hue" "hue-alfred-workflow"]]]}
+	{:des "vim like movement in everyday applications"
+        :rules [:vim-like-moves
+		[:v :up_arrow]
+                [:c :down_arrow]]}
        {:des "Application specific shortcuts for the right hand"
         :rules [:app-mode
                 ;; Workflowy
@@ -39,6 +44,7 @@
                 [:l :!TOl]
                 [:m :!TOd]
                 [:comma :!TOf]
+                [:period :!TOr]
                 ;;[:k :!TO]
                 [:up_arrow :!TOup_arrow]
                 [:down_arrow :!TOdown_arrow]

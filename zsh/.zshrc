@@ -23,12 +23,21 @@ ZSH_THEME="random"
 plugins=(
   git
   wd
+  zsh-autosuggestions
+  zsh-completions
+  zsh-syntax-highlighting
 )
+
+PATH=/Users/codyarnold/Library/Python/3.8/bin:$PATH
+PATH=/Users/codyarnold/.local/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
+bindkey -s ^f "tmux-sessionizer\n"
+
 alias x=clear
 alias c=cd
+alias vim=nvim
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

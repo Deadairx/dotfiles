@@ -39,8 +39,8 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-PATH=/Users/codyarnold/Library/Python/3.8/bin:$PATH
-PATH=/Users/codyarnold/.local/bin:$PATH
+PATH=$HOME/Library/Python/3.8/bin:$PATH
+PATH=$HOME/.local/bin:$PATH
 
 source ~/.credentials
 

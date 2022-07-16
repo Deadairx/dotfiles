@@ -9,4 +9,8 @@ Be sure `dotfiles` is **cloned to the home directory**
 ## Run script
 `./mac`
 
+### Troubleshooting
+`.DS_Store` errors:
+close any finder windows you have open and run this to remove all `.DS_Store` folders
+`find ~ -name ".DS_Store" -depth -exec rm -f {} \;`
 

@@ -53,6 +53,7 @@ nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>pf :Files<CR>
 nnoremap <C-k> :cnext<CR>
 nnoremap <C-j> :cprev<CR>
+nnoremap <leader>bu :Buffers<CR>
 
 source ~/.config/nvim/coc.vim
 

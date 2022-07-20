@@ -61,7 +61,7 @@
                 [:f :!TSC3]
                 [:k [:km "open: iTerm"]]
                 [:h [:km "open: Discord"]]
-                [:i [:km "open: Chrome"]]
+                [:i [:km "open: Brave"]]
                 ;;[:o [:km "open: Bluejeans"]]
                 [:l [:km "open: Roam"]]
                 [:o [:km "open: Roam (bluebeam)"]]

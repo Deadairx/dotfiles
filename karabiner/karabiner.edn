@@ -70,7 +70,7 @@
                 ;;[:u [:km "open: YouTube Music"]]
                 [:u [:km "open: Spotify"]]
                 ;;[:u [:km "open: WebStorm"]]
-                ;;[:j [:km "open: VSCode"]]
+                [:j [:km "open: VSCode"]]
                 ;;[:j [:km "open: MacVim"]]
                 ;;[:m [:km "open: Rider"]]
                 ]}]}

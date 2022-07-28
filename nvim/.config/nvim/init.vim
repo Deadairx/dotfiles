@@ -46,14 +46,16 @@ let g:blamer_delay = 300
 let mapleader = " "
 
 inoremap jk <Esc>
-nnoremap <leader>pv :Vex<CR>
+nnoremap <leader>pv :Ex<CR>
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <leader>ff :telescope find_files<CR>
-nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>pg :GFiles<CR>
 nnoremap <leader>pf :Files<CR>
 nnoremap <C-k> :cnext<CR>
 nnoremap <C-j> :cprev<CR>
 nnoremap <leader>bu :Buffers<CR>
+nnoremap <leader>cm :norm I//<CR>
+nnoremap <leader><leader>x :source %<CR>
 
 source ~/.config/nvim/coc.vim
 

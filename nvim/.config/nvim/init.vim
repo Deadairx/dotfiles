@@ -56,6 +56,7 @@ nnoremap <C-j> :cprev<CR>
 nnoremap <leader>bu :Buffers<CR>
 nnoremap <leader>cm :norm I//<CR>
 nnoremap <leader><leader>x :source %<CR>
+nnoremap <leader>cpd :Copilot disable<CR>
+nnoremap <leader>cpe :Copilot enable<CR>
 
 source ~/.config/nvim/coc.vim
-

@@ -41,6 +41,9 @@ plugins=(
 
 PATH=$HOME/Library/Python/3.8/bin:$PATH
 PATH=$HOME/.local/bin:$PATH
+PATH=$HOME/.emacs.d/bin:$PATH
+GOPATH=$(go env GOPATH)
+PATH=$GOPATH/bin:$PATH
 
 source ~/.credentials
 

@@ -1,6 +1,15 @@
 call plug#begin()
 Plug 'github/copilot.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" LSP
+Plug 'neovim/nvim-lspconfig'
+" Autocompletion
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 " Git lens
 Plug 'APZelos/blamer.nvim'
@@ -16,13 +25,13 @@ Plug 'ellisonleao/gruvbox.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'BurntSushi/ripgrep'
-Plug 'nvim-tree-sitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 call plug#end()
 
-" lua require("lsp-config")
+lua require("lsp-config")
 
 set termguicolors     " enable true colors support
 "let ayucolor="dark"   " for dark version of theme
@@ -51,12 +60,12 @@ nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <leader>ff :telescope find_files<CR>
 nnoremap <leader>pg :GFiles<CR>
 nnoremap <leader>pf :Files<CR>
-nnoremap <C-k> :cnext<CR>
-nnoremap <C-j> :cprev<CR>
+nnoremap <C-j> :cnext<CR>
+nnoremap <C-k> :cprev<CR>
 nnoremap <leader>bu :Buffers<CR>
 nnoremap <leader>cm :norm I//<CR>
 nnoremap <leader><leader>x :source %<CR>
 nnoremap <leader>cpd :Copilot disable<CR>
 nnoremap <leader>cpe :Copilot enable<CR>
 
-source ~/.config/nvim/coc.vim
+"source ~/.config/nvim/coc.vim

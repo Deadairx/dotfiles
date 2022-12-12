@@ -22,6 +22,13 @@ Plug 'junegunn/fzf.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'ellisonleao/gruvbox.nvim'
 
+" Debugging
+Plug 'mfussenegger/nvim-dap'
+Plug 'leoluz/nvim-dap-go'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'nvim-telescope/telescope-dap.nvim'
+
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'BurntSushi/ripgrep'
@@ -34,6 +41,7 @@ call plug#end()
 
 lua require("lsp-config")
 lua require("treesitter-config")
+lua require("debug-config")
 
 set termguicolors     " enable true colors support
 "let ayucolor="dark"   " for dark version of theme

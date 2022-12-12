@@ -41,6 +41,7 @@ call plug#end()
 
 lua require("lsp-config")
 lua require("treesitter-config")
+lua require("debug-config")
 
 set termguicolors     " enable true colors support
 "let ayucolor="dark"   " for dark version of theme

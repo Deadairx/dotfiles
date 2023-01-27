@@ -10,7 +10,7 @@
              :app-mode {:key :a}
              :vim-like-moves {:key :comma}
              :window-mode {:key :x}
-             :workflowy-mode {:key :slash}
+             :discord-mode {:key :slash}
              :z-mode {:key :z}}
  :applications {:workflowy ["^com\\.workflowy\\.desktop$"]}
  :main[{:des "okey (alfred)"
@@ -52,9 +52,13 @@
                 [:down_arrow :!TOdown_arrow]
                 [:left_arrow :!TOleft_arrow]
                 [:right_arrow :!TOright_arrow]]}
-       {:des "zkey Workflowy commands"
-        :rules [:workflowy-mode
-                [:c [:km "Shuffle Item Down"]]]}
+       {:des "Discord Mode"
+        :rules [:discord-mode
+                [:c :!Odown_arrow]
+                [:v :!Oup_arrow]
+                [:z :!COdown_arrow]
+                [:x :!COup_arrow]
+               ]}
        {:des "app switching"
         :rules [:z-mode
                 ;;[:f :!TCspace]

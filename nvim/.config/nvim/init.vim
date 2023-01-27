@@ -11,6 +11,9 @@ Plug 'hrsh7th/cmp-path'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
+" WhichKey
+Plug 'folke/which-key.nvim'
+
 " Git lens
 Plug 'APZelos/blamer.nvim'
 
@@ -40,6 +43,7 @@ call plug#end()
 
 lua require("lsp-config")
 lua require("treesitter-config")
+lua require("whichkey-config")
 
 set termguicolors     " enable true colors support
 "let ayucolor="dark"   " for dark version of theme

@@ -21,6 +21,12 @@ Plug 'junegunn/fzf.vim'
 " Themes
 Plug 'ayu-theme/ayu-vim'
 Plug 'ellisonleao/gruvbox.nvim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'sainnhe/everforest'
+Plug 'jdkanani/vim-material-theme'
+Plug 'jsit/toast.vim'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -39,6 +45,14 @@ set termguicolors     " enable true colors support
 "let ayucolor="dark"   " for dark version of theme
 set background=dark
 colorscheme gruvbox
+
+nnoremap <leader>cu :colorscheme gruvbox<CR>
+nnoremap <leader>ce :colorscheme PaperColor<CR>
+nnoremap <leader>co :colorscheme toast<CR>
+nnoremap <leader>ca :colorscheme everforest<CR>
+
+nnoremap <leader>cl :set background=light<CR>
+nnoremap <leader>cd :set background=dark<CR>
 
 set cursorline
 set colorcolumn=120

@@ -20,6 +20,7 @@
         :rules [:vim-like-moves
 		[:v :up_arrow]
                 [:c :down_arrow]]}
+    {:des "caps to ctrl" :rules [[:##caps_lock :left_control]]}
        {:des "Application specific shortcuts for the right hand"
         :rules [:app-mode
                 ;; Workflowy

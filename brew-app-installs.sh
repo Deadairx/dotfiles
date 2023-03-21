@@ -18,6 +18,8 @@ brew install --cask rectangle
 brew install --cask karabiner-elements
 brew install yqrashawn/goku/goku
 brew install --cask visual-studio-code
+brew tap espanso/espanso
+brew install espanso
 
 echo "===Development==="
 brew install npm

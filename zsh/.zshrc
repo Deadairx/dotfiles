@@ -45,6 +45,8 @@ PATH=$HOME/.emacs.d/bin:$PATH
 GOPATH=$(go env GOPATH)
 PATH=$GOPATH/bin:$PATH
 
+EDITOR=/opt/homebrew/bin/nvim
+
 source ~/.credentials
 
 source $ZSH/oh-my-zsh.sh

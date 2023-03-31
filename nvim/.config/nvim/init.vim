@@ -11,9 +11,13 @@ Plug 'hrsh7th/cmp-path'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
+Plug 'mbbill/undotree'
+
 " WhichKey
 Plug 'folke/which-key.nvim'
 
+" Git Commands
+Plug 'tpope/vim-fugitive'
 " Git lens
 Plug 'APZelos/blamer.nvim'
 

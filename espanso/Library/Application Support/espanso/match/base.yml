@@ -38,3 +38,8 @@ matches:
     replace: "❌"
   - trigger: ";yes"
     replace: "✅"
+  - trigger: ";coin"
+    replace: "🪙"
+  - trigger: ";ada"
+    replace: "₳"
+

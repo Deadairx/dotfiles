@@ -1,6 +1,10 @@
 call plug#begin()
 Plug 'github/copilot.vim'
 
+" Package Manager
+" :MasonUpdate updates registry contents
+Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+
 " LSP
 Plug 'neovim/nvim-lspconfig'
 " Autocompletion
@@ -10,6 +14,12 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
+
+" Hide sensative values in Env files
+Plug 'laytan/cloak.nvim'
+
+" Aiken
+Plug 'aiken-lang/editor-integration-nvim'
 
 Plug 'mbbill/undotree'
 
@@ -43,11 +53,19 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+
+" Roam like navigation
+Plug 'jakewvincent/mkdnflow.nvim'
 call plug#end()
 
 lua require("lsp-config")
 lua require("treesitter-config")
 lua require("whichkey-config")
+lua require("mkdnflow-config")
+lua require("cloak-config")
+
+" To help with mkdnflow link following
+autocmd FileType markdown set autowriteall
 
 set termguicolors     " enable true colors support
 "let ayucolor="dark"   " for dark version of theme

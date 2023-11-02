@@ -42,4 +42,6 @@ matches:
     replace: "🪙"
   - trigger: ";ada"
     replace: "₳"
+  - trigger: ";tm"
+    replace: "™"
 

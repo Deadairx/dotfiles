@@ -49,6 +49,8 @@ EDITOR=/opt/homebrew/bin/nvim
 
 source ~/.credentials
 
+# TODO Source from a .stream_assets file
+
 source $ZSH/oh-my-zsh.sh
 
 bindkey -s ^f "tmux-sessionizer\n"

@@ -27,6 +27,10 @@ require'lspconfig'.rust_analyzer.setup{ -- connect to Rust LSP server
     on_attach = commonLspKeymaps,
 } 
 
+vim.diagnostic.config({
+    virtual_text = false,
+})
+
 -- LSP autocomplete
 vim.opt.completeopt={"menu", "menuone", "noselect"} -- setting vim completion options
 

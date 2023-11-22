@@ -44,4 +44,6 @@ matches:
     replace: "₳"
   - trigger: ";tm"
     replace: "™"
+  - trigger: ";thumbs"
+    replace: "👍"
 

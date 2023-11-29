@@ -109,5 +109,7 @@ nnoremap <leader>cm :norm I//<CR>
 nnoremap <leader><leader>x :source %<CR>
 nnoremap <leader>cpd :Copilot disable<CR>
 nnoremap <leader>cpe :Copilot enable<CR>
+nnoremap <leader>gp :G push<CR>
+
 
 "source ~/.config/nvim/coc.vim

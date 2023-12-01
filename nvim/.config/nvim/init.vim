@@ -81,7 +81,7 @@ nnoremap <leader>cl :set background=light<CR>
 nnoremap <leader>cd :set background=dark<CR>
 
 set cursorline
-set colorcolumn=120
+set colorcolumn=80
 set nohlsearch
 set number
 set relativenumber

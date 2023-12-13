@@ -90,8 +90,9 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set scrolloff=5
+set nowrap
 
-let g:blamer_enabled = 1
+let g:blamer_enabled = 0
 let g:blamer_delay = 300
 
 let mapleader = " "

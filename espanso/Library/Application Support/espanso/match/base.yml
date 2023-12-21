@@ -46,4 +46,6 @@ matches:
     replace: "™"
   - trigger: ";thumbs"
     replace: "👍"
+  - trigger: ";jira"
+    replace: "[JIRA Ticket](https://nemetschek.atlassian.net/browse/$|$)"
 

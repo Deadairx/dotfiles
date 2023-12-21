@@ -13,7 +13,7 @@ local commonLspKeymaps = function()
     vim.keymap.set('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { buffer = 0, noremap = true, silent = true, desc = 'Code Action' })
 end
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 require'lspconfig'.gopls.setup{ -- connect to GO LSP server
     capabilities = capabilities,
     on_attach = commonLspKeymaps,
@@ -25,7 +25,81 @@ require'lspconfig'.tsserver.setup{ -- connect to TS LSP server
 require'lspconfig'.rust_analyzer.setup{ -- connect to Rust LSP server
     capabilities = capabilities,
     on_attach = commonLspKeymaps,
+    settings = {
+        ["rust-analyzer"] = {
+            procMacro = {
+                enable = true
+            },
+            diagnostics = {
+                disabled = {"unresolved-proc-macro"}
+            },
+        }
+    }
 } 
+
+function UpdateRustAnalyzerTarget(newTarget)
+    require('lspconfig').rust_analyzer.setup({
+        settings = {
+            ["rust-analyzer"] = {
+                cargo = {
+                    target = newTarget
+                },
+            }
+        }
+    })
+
+    -- Restart rust-analyzer 
+    vim.lsp.stop_client(vim.lsp.get_active_clients({name = "rust-analyzer"}))
+    vim.cmd([[edit]])
+end
+
+vim.cmd([[
+    command! -nargs=1 RustTarget lua UpdateRustAnalyzerTarget(<f-args>)
+]])
+
+local telescope = require('telescope')
+local pickers = require('telescope.pickers')
+local finders = require('telescope.finders')
+local actions = require('telescope.actions')
+local action_state = require('telescope.actions.state')
+
+function RustTargetPicker()
+    local targets = {
+        "wasm32-unknown-unknown",
+        "x86_64-unknown-linux-gnu",
+    }
+
+    pickers.new({}, {
+        prompt_title = 'Rust Analyzer Target',
+        finder = finders.new_table {
+            results = targets,
+        },
+        sorter = require('telescope.config').values.generic_sorter({}),
+        attach_mappings = function(prompt_bufnr, map)
+            actions.select_default:replace(function()
+                local selection = action_state.get_selected_entry()
+                actions.close(prompt_bufnr)
+                UpdateRustAnalyzerTarget(selection.value)
+            end)
+
+            return true
+        end,
+    }):find()
+end
+
+function SelectRustTarget()
+    local targets = {
+        "wasm32-unknown-unknown",
+        "x86_64-unknown-linux-gnu",
+    }
+    local choice = vim.fn.inputlist(targets)
+    if choice > 0 then
+        UpdateRustAnalyzerTarget(targets[choice])
+    end 
+end
+vim.cmd([[
+    command! RustSelectTarget call v:lua.RustTargetPicker()
+]])
 
 vim.diagnostic.config({
     virtual_text = false,

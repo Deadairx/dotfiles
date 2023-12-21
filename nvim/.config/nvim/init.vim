@@ -92,6 +92,10 @@ set smartindent
 set scrolloff=5
 set nowrap
 
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+autocmd BufReadPost,FileReadPost * normal zR
+
 let g:blamer_enabled = 0
 let g:blamer_delay = 300
 

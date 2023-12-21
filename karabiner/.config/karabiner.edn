@@ -11,7 +11,7 @@
              :vim-like-moves {:key :comma}
              :window-mode {:key :q}
              :discord-mode {:key :slash}
-             :z-mode {:key :semicolon}}
+             :app-switcher {:key :semicolon}}
  :applications {:workflowy ["^com\\.workflowy\\.desktop$"]}
  :main[{:des "okey (alfred)"
         :rules [:o-mode
@@ -33,10 +33,12 @@
        {:des "qkey Window Management commands"
         :rules [:window-mode
                 ;; Window mode on Right Hand
-                ;; 1/6
+                ;; 1/6th screen
+                ;; top
                 [:g :!TOu]
                 [:c :!TOi]
                 [:r :!TOo]
+                ;; bottom
                 [:h :!TOj]
                 [:t :!TOk]
                 [:n :!TOl]
@@ -63,7 +65,7 @@
                 [:x :!COup_arrow]
                ]}
        {:des "app switching"
-        :rules [:z-mode
+        :rules [:app-switcher 
                 ;;[:f :!TCspace]
                 [:f :!TSC3]
                 [:t [:km "open: iTerm"]]

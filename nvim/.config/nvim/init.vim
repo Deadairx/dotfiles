@@ -31,6 +31,10 @@ Plug 'tpope/vim-fugitive'
 " Git lens
 Plug 'APZelos/blamer.nvim'
 
+" Harpoon
+Plug 'nvim-lua/plenary.nvim'
+Plug 'ThePrimeagen/harpoon'
+
 " Fuzzy Finders
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -53,6 +57,9 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+
+" Local Plugins
+Plug '~/repos/nvim-plugins/stackmap.nvim'
 
 " Roam like navigation
 Plug 'jakewvincent/mkdnflow.nvim'

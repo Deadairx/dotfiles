@@ -7,6 +7,9 @@
 
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
+
+# TODO: Seperate into files
+
 matches:
   # Simple text replacement
   - trigger: ";espanso"
@@ -48,4 +51,78 @@ matches:
     replace: "👍"
   - trigger: ";jira"
     replace: "[JIRA Ticket](https://nemetschek.atlassian.net/browse/$|$)"
+  - trigger: ";bs"
+    replace: "BBCLD-"
+  - trigger: ";book"
+    replace: "📘"
+  - trigger: ";bolt"
+    replace: "⚡️"
+  - trigger: ";bug"
+    replace: "🐛"
+  - trigger: ";brain"
+    replace: "🧠"
+  - trigger: ";flip"
+    replace: "(╯°□°)╯︵ ┻━┻"
 
+  - trigger: ";pp"
+    replace: "[[Pain Point/💢]]"
+  - trigger: ";q "
+    replace: "[[Question/❓]] "
+  - trigger: ";raise"
+    replace: "🙌"
+  - trigger: ";pi "
+    replace: "𝜋"
+  - trigger: ";people"
+    replace: "👥"
+  - trigger: ";person"
+    replace: "👤"
+  - trigger: ";poo"
+    replace: "💩"
+  - trigger: ";eyes"
+    replace: "👀"
+
+  # Arrows
+  - trigger: ";up"
+    replace: "↑"
+  - trigger: ";down"
+    replace: "↓"
+  - trigger: ";left"
+    replace: "←"
+  - trigger: ";right"
+    replace: "→"
+
+  # Dynamic
+  # FIX: needs dynamic datetime
+  # - trigger: ";dt "
+  #   replace: "{YYYY}.{MM}.{DD} "
+
+  # FIX: Run JS function on expansion
+  # - trigger: ";eu "
+    # replace: "[[{/JavaScript
+    #   function makeid(length) {
+    #     var result           = '';
+    #     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    #     var charactersLength = characters.length;
+    #     for ( var i = 0; i < length; i++ ) {
+    #       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    #     }
+    #     return result;
+    #   }
+    #   makeid(12)
+    #   }{^}]]"
+
+  # Emotes
+  - trigger: ";shrug"
+    replace: "¯\\_(ツ)_/¯"
+
+  # Colors
+  - trigger: ";red"
+    replace: "🔴"
+  - trigger: ";yel"
+    replace: "🟡"
+  - trigger: ";gre"
+    replace: "🟢"
+  - trigger: ";ora"
+    replace: "🟠"
+  - trigger: ";gray"
+    replace: "⚪️"

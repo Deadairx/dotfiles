@@ -1,67 +1,19 @@
 -- Native LSP Setup
 
 local commonLspKeymaps = function()
-	vim.keymap.set(
-		"n",
-		"K",
-		"<cmd>lua vim.lsp.buf.hover()<CR>",
-		{ buffer = 0, noremap = true, silent = true, desc = "Show hover" }
-	)
-	vim.keymap.set(
-		"n",
-		"gd",
-		"<cmd>lua vim.lsp.buf.definition()<CR>",
-		{ buffer = 0, noremap = true, silent = true, desc = "Go to definition" }
-	)
-	vim.keymap.set(
-		"n",
-		"gT",
-		"<cmd>lua vim.lsp.buf.type_definition()<CR>",
-		{ buffer = 0, noremap = true, silent = true, desc = "Go to type definition" }
-	)
-	vim.keymap.set(
-		"n",
-		"gi",
-		"<cmd>lua vim.lsp.buf.implementation()<CR>",
-		{ buffer = 0, noremap = true, silent = true, desc = "Go to implementation" }
-	)
-	vim.keymap.set(
-		"n",
-		"gR",
-		"<cmd>lua vim.lsp.buf.references()<CR>",
-		{ buffer = 0, noremap = true, silent = true, desc = "Go to references" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>dj",
-		"<cmd>lua vim.diagnostic.goto_next()<CR>",
-		{ buffer = 0, noremap = true, silent = true, desc = "Go to next diagnostic" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>dk",
-		"<cmd>lua vim.diagnostic.goto_prev()<CR>",
-		{ buffer = 0, noremap = true, silent = true, desc = "Go to previous diagnostic" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>dl",
-		"<cmd>Telescope diagnostics<CR>",
-		{ buffer = 0, noremap = true, silent = true, desc = "List diagnostics" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>r",
-		"<cmd>lua vim.lsp.buf.rename()<CR>",
-		{ buffer = 0, noremap = true, silent = true, desc = "Rename symbol" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>a",
-		"<cmd>lua vim.lsp.buf.code_action()<CR>",
-		{ buffer = 0, noremap = true, silent = true, desc = "Code Action" }
-	)
+	vim.keymap.set( "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { buffer = 0, noremap = true, silent = true, desc = "Show hover" })
+	vim.keymap.set( "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { buffer = 0, noremap = true, silent = true, desc = "Go to definition" })
+	vim.keymap.set( "n", "gT", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { buffer = 0, noremap = true, silent = true, desc = "Go to type definition" })
+	vim.keymap.set( "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { buffer = 0, noremap = true, silent = true, desc = "Go to implementation" })
+	vim.keymap.set( "n", "gR", "<cmd>lua vim.lsp.buf.references()<CR>", { buffer = 0, noremap = true, silent = true, desc = "Go to references" })
+	vim.keymap.set( "n", "<leader>dj", "<cmd>lua vim.diagnostic.goto_next()<CR>", { buffer = 0, noremap = true, silent = true, desc = "Go to next diagnostic" })
+	vim.keymap.set( "n", "<leader>dk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { buffer = 0, noremap = true, silent = true, desc = "Go to previous diagnostic" })
+	vim.keymap.set( "n", "<leader>dl", "<cmd>Telescope diagnostics<CR>", { buffer = 0, noremap = true, silent = true, desc = "List diagnostics" })
+	vim.keymap.set( "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", { buffer = 0, noremap = true, silent = true, desc = "Rename symbol" })
+	vim.keymap.set( "n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", { buffer = 0, noremap = true, silent = true, desc = "Code Action" })
 end
+
+local lspconfig = require("lspconfig")
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 require("lspconfig").gopls.setup({ -- connect to GO LSP server
@@ -69,9 +21,11 @@ require("lspconfig").gopls.setup({ -- connect to GO LSP server
 	on_attach = commonLspKeymaps,
 })
 require("lspconfig").tsserver.setup({ -- connect to TS LSP server
+	root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	capabilities = capabilities,
 	on_attach = commonLspKeymaps,
 })
+-- NOTE: Disabled for DAP testing, otherwise rust_analyzer runs twice and it gets annoying
 require("lspconfig").rust_analyzer.setup({ -- connect to Rust LSP server
 	capabilities = capabilities,
 	on_attach = commonLspKeymaps,

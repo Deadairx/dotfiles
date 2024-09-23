@@ -44,6 +44,9 @@ PATH=$HOME/.local/bin:$PATH
 PATH=$HOME/.emacs.d/bin:$PATH
 GOPATH=$(go env GOPATH)
 PATH=$GOPATH/bin:$PATH
+# add Mason bin
+PATH=$HOME/.local/share/nvim/mason/bin:$PATH
+
 
 EDITOR=/opt/homebrew/bin/nvim
 
@@ -68,3 +71,32 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+
+random_md() {
+  # Find all markdown files in the current directory
+  local files=(*.md)
+
+  # Check if there are any markdown files
+  if (( ${#files[@]} == 0 )); then
+    echo "No markdown files found in the current directory."
+    return 1
+  fi
+
+  # Select a random file from the list
+  local random_file=${files[$RANDOM % ${#files[@]}]}
+
+  echo "Displaying $random_file:"
+  echo "=========================="
+
+  # Count the number of lines in the file
+  local line_count=$(wc -l < "$random_file")
+
+  # Display the file with 'cat' if it's under 40 lines, otherwise use 'less'
+  if (( line_count > 20 )); then
+    less "$random_file"
+  else
+    cat "$random_file"
+  fi
+}

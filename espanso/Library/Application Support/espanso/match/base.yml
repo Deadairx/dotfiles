@@ -64,6 +64,8 @@ matches:
   - trigger: ";flip"
     replace: "(╯°□°)╯︵ ┻━┻"
 
+  - trigger: ";!"
+    replace: "❗️"
   - trigger: ";pp"
     replace: "[[Pain Point/💢]]"
   - trigger: ";q "

@@ -111,6 +111,14 @@ matches:
     #   makeid(12)
     #   }{^}]]"
 
+  - trigger: ";uuid"
+    replace: "{{uuid}}"
+    vars:
+      - name: uuid
+        type: shell
+        params:
+          cmd: "uuidgen"
+
   # Emotes
   - trigger: ";shrug"
     replace: "¯\\_(ツ)_/¯"

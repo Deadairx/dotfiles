@@ -68,6 +68,7 @@
         :rules [:app-switcher 
                 ;;[:f :!TCspace]
                 [:f :!TSC3]
+                [:h [:km "open: Zed"]]
                 [:t [:km "open: iTerm"]]
                 ;;[:t [:km "open: cool-retro-term"]]
                 [:d [:km "open: Discord"]]

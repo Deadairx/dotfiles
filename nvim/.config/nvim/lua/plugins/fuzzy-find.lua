@@ -1,5 +1,5 @@
 return {
-	{ -- Fuzzy Finder (files, lsp, etc)
+	{ -- Telescope Fuzzy Finder (files, lsp, etc)
 		"nvim-telescope/telescope.nvim",
 		event = "VimEnter",
 		branch = "0.1.x",
@@ -77,6 +77,7 @@ return {
 			vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 			vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 			vim.keymap.set("n", "<leader>sc", builtin.colorscheme, { desc = "[S]earch [C]olorschemes" })
+			vim.keymap.set("n", "<leader>cs", builtin.colorscheme, { desc = "[C]olor[S]chemes" })
 			vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
@@ -104,13 +105,19 @@ return {
 			end, { desc = "[S]earch [N]eovim files" })
 		end,
 	},
-	{
+	{ -- fzf
 		"ibhagwan/fzf-lua",
 		-- optional for icon support
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+			"BurntSushi/ripgrep",
+		},
 		config = function()
 			-- calling `setup` is optional for customization
 			require("fzf-lua").setup({})
 		end,
+	},
+	{
+		"duane9/nvim-rg"
 	},
 }

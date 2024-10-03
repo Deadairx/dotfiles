@@ -17,4 +17,11 @@ return {
 			},
 		},
 	},
+	{
+		"APZelos/blamer.nvim",
+		config = function()
+			-- Toggle with `gl`
+			vim.keymap.set("n", "gl", ":BlamerToggle<CR>", { desc = "Toggle inline Git len" })
+		end,
+	},
 }

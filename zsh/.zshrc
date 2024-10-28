@@ -100,3 +100,8 @@ random_md() {
     cat "$random_file"
   fi
 }
+
+# pnpm
+export PNPM_HOME="/Users/carnold/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

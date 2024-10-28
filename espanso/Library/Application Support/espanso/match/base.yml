@@ -82,6 +82,8 @@ matches:
     replace: "💩"
   - trigger: ";eyes"
     replace: "👀"
+  - trigger: ";reload"
+    replace: "🔁"
 
   # Arrows
   - trigger: ";up"

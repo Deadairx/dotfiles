@@ -1,6 +1,8 @@
 return {
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
+	"nvim-treesitter/nvim-treesitter-context",
+
 	-- "gc" to comment visual regions/lines
 	{ "numToStr/Comment.nvim", opts = {} },
 

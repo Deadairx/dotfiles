@@ -20,7 +20,7 @@ require("lspconfig").gopls.setup({ -- connect to GO LSP server
 	capabilities = capabilities,
 	on_attach = commonLspKeymaps,
 })
-require("lspconfig").tsserver.setup({ -- connect to TS LSP server
+require("lspconfig").ts_ls.setup({ -- connect to TS LSP server
 	root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	capabilities = capabilities,
 	on_attach = commonLspKeymaps,

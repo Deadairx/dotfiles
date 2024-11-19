@@ -1,5 +1,7 @@
 Be sure `dotfiles` is **cloned to the home directory**
 
+<!-- TODO: look into intput bindings for zsh -->
+
 ## Get up and running
 - `brew-app-installs.sh` installs brew and gets all the apps I need through brew
 

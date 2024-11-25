@@ -101,6 +101,9 @@ random_md() {
   fi
 }
 
+# Blank pager for GitHub CLI to send output to stdout instead of less
+export GH_PAGER=
+
 # pnpm
 export PNPM_HOME="/Users/carnold/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"

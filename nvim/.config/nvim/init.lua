@@ -73,6 +73,9 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = false      -- Disable folding
 vim.o.foldlevelstart = 99     -- Start with all folds open
 
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 --set tabstop=4 softtabstop=4
 --set shiftwidth=4
 --set colorcolumn=80

@@ -24,7 +24,6 @@ brew install espanso
 echo "===Development==="
 brew install npm
 brew install node
-brew install tldr
 brew install minikube
 brew install kubectl
 brew install golang
@@ -32,6 +31,9 @@ brew install tig
 
 echo "===Applications==="
 brew install --cask spotify
-brew install --cask tuple
+# brew install --cask tuple
 brew install --cask vlc
+
+
+echo "===Fonts==="
 

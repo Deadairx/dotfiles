@@ -29,11 +29,17 @@ brew install kubectl
 brew install golang
 brew install tig
 
+# Rust
+if ! which rustup > /dev/null; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fi
+
 echo "===Applications==="
 brew install --cask spotify
 # brew install --cask tuple
 brew install --cask vlc
-
+brew install --cask keycastr
 
 echo "===Fonts==="
+# https://dtinth.github.io/comic-mono-font/
 

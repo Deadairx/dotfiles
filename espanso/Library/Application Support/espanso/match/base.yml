@@ -64,6 +64,11 @@ matches:
   - trigger: ";flip"
     replace: "(╯°□°)╯︵ ┻━┻"
 
+  - trigger: ";bird"
+    replace: "🐦"
+  - trigger: ";deg"
+    replace: "°"
+
   - trigger: ";!"
     replace: "❗️"
   - trigger: ";pp"
@@ -94,6 +99,10 @@ matches:
     replace: "←"
   - trigger: ";right"
     replace: "→"
+
+  # Box
+  - trigger: ";box"
+    replace: "▢"
 
   # Dynamic
   # FIX: needs dynamic datetime

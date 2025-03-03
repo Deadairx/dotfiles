@@ -12,7 +12,7 @@ fi
 echo "Installing Homebrew packages"
 
 echo "===Workflow Essentials==="
-brew install --cask iterm2
+brew install --cask wezterm
 brew install --cask docker
 brew install --cask rectangle
 brew install --cask karabiner-elements

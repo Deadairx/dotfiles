@@ -5,8 +5,21 @@ if ! which brew > /dev/null; then
 
   # add to path
   echo "Adding Homebrew to PATH"
-  echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
-  source ~/.bash_profile
+  echo "👀 checking shell environment..."
+  if [ -n "$BASH_VERSION" ]; then
+    echo "Running in Bash"
+    echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+    source ~/.bash_profile
+  elif [ -n "$ZSH_VERSION" ]; then
+    echo "Running in Zsh"
+    echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.zshrc
+    source ~/.zshrc
+  else
+    echo "⚠️⚠️⚠️ Running in an unknown shell ⚠️⚠️⚠️"
+    echo "brew won't work until you add this to your rc file"
+    echo 'export PATH="/usr/local/bin:$PATH"'
+    export PATH="/usr/local/bin:$PATH"
+  fi
 fi
 
 echo "Installing Homebrew packages"

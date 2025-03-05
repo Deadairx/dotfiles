@@ -20,6 +20,7 @@ brew install yqrashawn/goku/goku
 brew install --cask visual-studio-code
 brew tap espanso/espanso
 brew install espanso
+# Install Keyboard Maestro 9.2 here: https://files.stairways.com/
 
 echo "===Development==="
 brew install npm
@@ -39,6 +40,7 @@ brew install --cask spotify
 # brew install --cask tuple
 brew install --cask vlc
 brew install --cask keycastr
+brew install --cask tomatobar # Pomo timer
 
 echo "===Fonts==="
 # https://dtinth.github.io/comic-mono-font/

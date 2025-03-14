@@ -14,6 +14,12 @@ export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 # Dotnet
 export PATH="/usr/local/share/dotnet:$PATH"
 
+# Flutter
+export PATH="/Users/codyarnold/repos/TradeAide/flutter/bin:$PATH"
+
+# Ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -62,6 +68,7 @@ alias x=clear
 alias c=cd
 alias vim=nvim
 alias gs=gss
+alias ls=eza
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -103,6 +110,10 @@ random_md() {
 
 # Blank pager for GitHub CLI to send output to stdout instead of less
 export GH_PAGER=
+
+# VCV Rack Dev
+# Download at https://vcvrack.com/manual/Building#Building-Rack-plugins
+export RACK_DIR="$HOME/Rack-SDK"
 
 # pnpm
 export PNPM_HOME="/Users/carnold/Library/pnpm"

@@ -147,3 +147,15 @@ matches:
     replace: "🟠"
   - trigger: ";gray"
     replace: "⚪️"
+  - trigger: ";white"
+    replace: "⚪️"
+  - trigger: ";blue"
+    replace: "🔵"
+  - trigger: ";black"
+    replace: "⚫️"
+
+  - trigger: ";clip"
+    replace: "{{clipb}}"
+    vars:
+      - name: "clipb"
+        type: "clipboard"

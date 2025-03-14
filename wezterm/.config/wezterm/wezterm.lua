@@ -12,7 +12,6 @@ config.window_background_gradient = {
   -- colors = { 'black' },
   -- preset = "CubeHelixDefault",
   orientation = {
-    -- TODO: Experiment with Linear
     Radial = {
       cx = 0.75,
       cy = 1.05,

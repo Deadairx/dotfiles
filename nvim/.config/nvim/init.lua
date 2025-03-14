@@ -62,6 +62,7 @@ vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#6E7461" }) -- Set your desired color here
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
@@ -76,7 +77,7 @@ vim.o.foldlevelstart = 99     -- Start with all folds open
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.colorcolumn = 80
+vim.opt.colorcolumn = "80"
 --set nohlsearch
 
 -- [[ Basic Keymaps ]]

@@ -44,9 +44,8 @@ return {
 				diff = {
 					ours = "co",
 					theirs = "ct",
-					all_theirs = "ca",
 					both = "cb",
-					cursor = "cc",
+					cursor = "cC",
 					next = "]x",
 					prev = "[x",
 				},

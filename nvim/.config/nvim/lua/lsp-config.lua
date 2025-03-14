@@ -1,3 +1,8 @@
+-- Configure hover window with a border
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "double" -- You can use "single", "double", "rounded", "solid", "shadow", or a custom border
+})
+
 -- Native LSP Setup
 
 local commonLspKeymaps = function()
@@ -11,6 +16,8 @@ local commonLspKeymaps = function()
 	vim.keymap.set( "n", "<leader>dl", "<cmd>Telescope diagnostics<CR>", { buffer = 0, noremap = true, silent = true, desc = "List diagnostics" })
 	vim.keymap.set( "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", { buffer = 0, noremap = true, silent = true, desc = "Rename symbol" })
 	vim.keymap.set( "n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", { buffer = 0, noremap = true, silent = true, desc = "Code Action" })
+
+	vim.keymap.set( "n", "<leader>rr", ":e!<CR> <BAR> :LspRestart<CR>", { buffer = 0, noremap = true, silent = true, desc = "Restart LSP" })
 end
 
 local lspconfig = require("lspconfig")
@@ -40,6 +47,11 @@ require("lspconfig").rust_analyzer.setup({ -- connect to Rust LSP server
 		},
 	},
 })
+require("lspconfig").pylsp.setup({ -- connect to Python LSP server
+	capabilities = capabilities,
+	on_attach = commonLspKeymaps,
+})
+
 require("lspconfig").lua_ls.setup({ -- connect to Lua LSP server
 	capabilities = capabilities,
 	on_attach = commonLspKeymaps,

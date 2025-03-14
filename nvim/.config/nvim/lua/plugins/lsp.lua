@@ -6,7 +6,7 @@ return {
 			{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			{ "mrcjkb/rustaceanvim", version = "^4" },
+			-- { "mrcjkb/rustaceanvim", version = "^4" },
 
 			-- Useful status updates for LSP.
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`

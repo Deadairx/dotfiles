@@ -1,3 +1,8 @@
+local dynamic_provider = function ()
+	if vim.env.MACHINE_TYPE == "work" then return "copilot" end
+	return "openai"
+end
+
 return {
 	{
 		"github/copilot.vim",
@@ -13,7 +18,7 @@ return {
 		version = false, -- set this if you want to always pull the latest change
 		opts = {
 			---@alias Provider "openai" | "copilot" | string
-			provider = "openai",
+			provider = dynamic_provider(),
 			auto_suggestions_provider = "copilot",
 			openai = {
 				endpoint = "https://api.openai.com/v1",
@@ -25,6 +30,7 @@ return {
 			copilot = {
 				endpoint = "https://api.githubcopilot.com",
 				model = "gpt-4o-2024-08-06",
+				-- model = "claude-3.5-sonnet",
 				proxy = nil, -- [protocol://]host[:port] Use this proxy
 				allow_insecure = false, -- Allow insecure server connections
 				timeout = 30000, -- Timeout in milliseconds
@@ -44,6 +50,7 @@ return {
 				diff = {
 					ours = "co",
 					theirs = "ct",
+					all_theirs = "cA",
 					both = "cb",
 					cursor = "cC",
 					next = "]x",

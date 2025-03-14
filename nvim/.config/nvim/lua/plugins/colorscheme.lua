@@ -42,6 +42,13 @@ return {
 		-- PERF:
 		-- NOTE:
 		-- TEST:
+		--
+		--------TODO---------
+		-- IN PROGRESS:
+		-- WIP:
+
+		-- NOTE: 🤔 Is there a way to add custom tags?
+		--			Can you wildcard them so that TODO(cody): would trigger a highlight?
 
 		"folke/todo-comments.nvim",
 		event = "VimEnter",

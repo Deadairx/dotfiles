@@ -98,4 +98,6 @@ return {
 			--    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 		end,
 	},
+
+	"eandrju/cellular-automaton.nvim",
 }

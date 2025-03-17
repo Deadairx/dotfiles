@@ -65,6 +65,8 @@ matches:
     replace: "(╯°□°)╯︵ ┻━┻"
   - trigger: ";think"
     replace: "🤔"
+  - trigger: ";moon"
+    replace: "🌕"
 
   - trigger: ";bird"
     replace: "🐦"

@@ -67,6 +67,8 @@ matches:
     replace: "🤔"
   - trigger: ";moon"
     replace: "🌙"
+  - trigger: ";light"
+    replace: "💡"
 
   - trigger: ";bird"
     replace: "🐦"

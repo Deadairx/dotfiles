@@ -63,6 +63,8 @@ matches:
     replace: "🧠"
   - trigger: ";flip"
     replace: "(╯°□°)╯︵ ┻━┻"
+  - trigger: ";think"
+    replace: "🤔"
 
   - trigger: ";bird"
     replace: "🐦"

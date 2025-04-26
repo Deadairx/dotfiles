@@ -73,6 +73,18 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldenable = false      -- Disable folding
 vim.o.foldlevelstart = 99     -- Start with all folds open
+vim.opt.foldtext = 'v:lua.FoldText()'
+
+function _G.FoldText()
+  -- Get the first non-blank line of the fold
+  local line = vim.fn.getline(vim.v.foldstart)
+  -- Count folded lines
+  local folded_lines = vim.v.foldend - vim.v.foldstart + 1
+  -- Fill to window width minus room for folded lines text
+  local width = vim.api.nvim_win_get_width(0) - 10
+  local fill = string.rep(" ", 80 - #line)
+  return line .. fill .. folded_lines .. "⏎"
+end
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

@@ -8,6 +8,9 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Personal bins
+export PATH="$HOME/bin:$PATH"
+
 # Python (pip)
 export PATH="$HOME/Library/Python/3.8/bin:$PATH"
 

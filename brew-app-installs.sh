@@ -33,6 +33,7 @@ brew install yqrashawn/goku/goku
 brew install --cask visual-studio-code
 brew tap espanso/espanso
 brew install espanso
+brew install starship
 # Install Keyboard Maestro 9.2 here: https://files.stairways.com/
 
 echo "===Development==="

@@ -2,6 +2,22 @@ return {
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
 	"nvim-treesitter/nvim-treesitter-context",
+	
+	{ 
+		"rcarriga/nvim-notify",
+		config = function()
+			-- [[ Configure Notify ]] See `:help nvim-notify`
+			require("notify").setup({
+				background_colour = "#000000",
+				timeout = 3000, -- 3 seconds
+				render = "wrapped-default",
+				max_height = function()
+					return math.floor(vim.o.lines * 0.75)
+				end,
+			})
+			vim.notify = require("notify")
+		end,
+	},
 
 	-- "gc" to comment visual regions/lines
 	{ "numToStr/Comment.nvim", opts = {} },

@@ -124,3 +124,7 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 eval "$(starship init zsh)"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"

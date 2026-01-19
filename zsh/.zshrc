@@ -13,6 +13,9 @@ export PATH="$HOME/bin:$PATH"
 
 # Python (pip)
 export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+# (pipx)
+export PATH="$HOME/.local/pipx:$PATH"
+export PATH="$HOME/.local/pipx/venvs/twitch-dl/bin:$PATH"
 
 # Dotnet
 export PATH="/usr/local/share/dotnet:$PATH"
@@ -22,6 +25,9 @@ export PATH="/Users/codyarnold/repos/TradeAide/flutter/bin:$PATH"
 
 # Ruby
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# Homebrew
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

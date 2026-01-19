@@ -55,6 +55,9 @@ return {
 				--
 				-- No, but seriously. Please read `:help ins-completion`, it is really good!
 				mapping = cmp.mapping.preset.insert({
+					-- Disable <CR> for completion, use <C-y> instead
+					["<CR>"] = cmp.config.disable,
+
 					-- Select the [n]ext item
 					["<C-n>"] = cmp.mapping.select_next_item(),
 					-- Select the [p]revious item

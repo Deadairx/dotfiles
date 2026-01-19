@@ -23,10 +23,10 @@ return {
         name = "personal",
         path = "~/repos/obsidian/Main",
       },
-      {
-        name = "work",
-        path = "~/repos/obsidian/Work",
-      },
+      -- {
+      --   name = "work",
+      --   path = "~/repos/obsidian/Work",
+      -- },
     },
 
     -- see below for full list of options 👇

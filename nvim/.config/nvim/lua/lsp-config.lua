@@ -101,6 +101,22 @@ function UpdateRustAnalyzerTarget(newTarget)
 	vim.cmd([[edit]])
 end
 
+function UpdateRustAnalyzerFeatures(newFeatureList)
+	require("lspconfig").rust_analyzer.setup({
+		settings = {
+			["rust-analyzer"] = {
+				cargo = {
+					features = { newFeatureList }
+				},
+			},
+		},
+	})
+
+	-- Restart rust-analyzer
+	vim.lsp.stop_client(vim.lsp.get_active_clients({ name = "rust-analyzer" }))
+	vim.cmd([[edit]])
+end
+
 vim.cmd([[
     command! -nargs=1 RustTarget lua UpdateRustAnalyzerTarget(<f-args>)
 ]])
@@ -137,6 +153,32 @@ function RustTargetPicker()
 		:find()
 end
 
+function RustFeaturePicker()
+	local features = {
+		"v1",
+		"v2",
+	}
+
+	pickers
+		.new({}, {
+			prompt_title = "Rust Analyzer Features",
+			finder = finders.new_table({
+				results = features,
+			}),
+			sorter = require("telescope.config").values.generic_sorter({}),
+			attach_mappings = function(prompt_bufnr, map)
+				actions.select_default:replace(function()
+					local selection = action_state.get_selected_entry()
+					actions.close(prompt_bufnr)
+					UpdateRustAnalyzerFeatures(selection.value)
+				end)
+
+				return true
+			end,
+		})
+		:find()
+end
+
 function SelectRustTarget()
 	local targets = {
 		"wasm32-unknown-unknown",
@@ -149,6 +191,9 @@ function SelectRustTarget()
 end
 vim.cmd([[
     command! RustSelectTarget call v:lua.RustTargetPicker()
+]])
+vim.cmd([[
+    command! RustSelectFeature call v:lua.RustFeaturePicker()
 ]])
 
 vim.diagnostic.config({

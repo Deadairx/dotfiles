@@ -73,6 +73,8 @@ matches:
     replace: "💡"
   - trigger: ";grin"
     replace: "😁"
+  - trigger: ";dead"
+    replace: "💀"
 
   - trigger: ";bird"
     replace: "🐦"

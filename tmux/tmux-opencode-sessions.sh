@@ -2,9 +2,17 @@
 
 current_session_id=$(tmux display-message -p '#{session_id}' 2>/dev/null)
 waiting_sessions=""
+seen_sessions=""
 
-while read -r session_id waiting; do
-  if [ "$waiting" = "1" ] && [ "$session_id" != "$current_session_id" ]; then
+while read -r session_id waiting command; do
+  if [ "$waiting" = "1" ] && [ "$command" = "opencode" ] && [ "$session_id" != "$current_session_id" ]; then
+    case " $seen_sessions " in
+      *" $session_id "*)
+        continue
+        ;;
+    esac
+
+    seen_sessions="$seen_sessions $session_id"
     session_num=${session_id#\$}
     if [ -n "$waiting_sessions" ]; then
       waiting_sessions="$waiting_sessions $session_num"
@@ -13,7 +21,7 @@ while read -r session_id waiting; do
     fi
   fi
 done <<EOF
-$(tmux list-sessions -F '#{session_id} #{@opencode_waiting}' 2>/dev/null)
+$(tmux list-windows -a -F '#{session_id} #{@opencode_window_waiting} #{pane_current_command}' 2>/dev/null)
 EOF
 
 if [ -n "$waiting_sessions" ]; then
